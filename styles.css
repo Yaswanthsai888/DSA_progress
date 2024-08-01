@@ -42,3 +42,15 @@ li {
 input[type="checkbox"] {
     margin-right: 10px;
 }
+
+.hidden {
+    display: none;
+}
+
+.note {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
