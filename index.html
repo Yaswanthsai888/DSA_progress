@@ -12,75 +12,144 @@
     <div class="roadmap">
         <!-- Week 1 -->
         <h2>Week 1: Introduction and Basic Data Structures</h2>
-        <ul class="week week1">
-            <li>
-                <input type="checkbox" id="day1" class="task">
-                <label for="day1">Day 1-2: Python Basics Refresher</label>
-                <ul>
-                    <li><input type="checkbox" id="day1-1" class="task"><label for="day1-1">Variables, Data Types</label></li>
-                    <li><input type="checkbox" id="day1-2" class="task"><label for="day1-2">Conditional Statements</label></li>
-                    <li><input type="checkbox" id="day1-3" class="task"><label for="day1-3">Loops</label></li>
-                    <li><input type="checkbox" id="day1-4" class="task"><label for="day1-4">Functions</label></li>
-                    <li><input type="checkbox" id="day1-5" class="task"><label for="day1-5">List Comprehensions</label></li>
+        <div class="progress-bar">
+            <div id="week1-progress" class="progress"></div>
+        </div>
+        <p id="week1-progress-text">Week 1 Progress: 0%</p>
+        <div class="week-content week1">
+            <section class="week-section" id="week1-day1">
+                <h3>Day 1-2: Python Basics Refresher</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="day1-1" class="task">
+                        <label for="day1-1">Variables, Data Types</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day1-2" class="task">
+                        <label for="day1-2">Conditional Statements</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day1-3" class="task">
+                        <label for="day1-3">Loops</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day1-4" class="task">
+                        <label for="day1-4">Functions</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day1-5" class="task">
+                        <label for="day1-5">List Comprehensions</label>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <input type="checkbox" id="day3" class="task">
-                <label for="day3">Day 3-4: Complexity Analysis</label>
-                <ul>
-                    <li><input type="checkbox" id="day3-1" class="task"><label for="day3-1">Big O Notation</label></li>
-                    <li><input type="checkbox" id="day3-2" class="task"><label for="day3-2">Time and Space Complexity</label></li>
-                    <li><input type="checkbox" id="day3-3" class="task"><label for="day3-3">Analyzing Complexity of Common Operations</label></li>
+            </section>
+
+            <!-- Complexity Analysis -->
+            <section class="week-section" id="week1-day3">
+                <h3>Day 3-4: Complexity Analysis</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="day3-1" class="task">
+                        <label for="day3-1">Big O Notation</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day3-2" class="task">
+                        <label for="day3-2">Time and Space Complexity</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day3-3" class="task">
+                        <label for="day3-3">Analyzing Complexity of Common Operations</label>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <input type="checkbox" id="day5" class="task">
-                <label for="day5">Day 5-7: Arrays and Lists</label>
-                <ul>
-                    <li><input type="checkbox" id="day5-1" class="task"><label for="day5-1">Introduction to Arrays</label></li>
-                    <li><input type="checkbox" id="day5-2" class="task"><label for="day5-2">Dynamic Arrays</label></li>
-                    <li><input type="checkbox" id="day5-3" class="task"><label for="day5-3">Array Operations: Insert, Delete, Search</label></li>
-                    <li><input type="checkbox" id="day5-4" class="task"><label for="day5-4">Two Pointers Technique</label></li>
-                    <li><input type="checkbox" id="day5-5" class="task"><label for="day5-5">Sliding Window Technique</label></li>
+            </section>
+
+            <!-- Arrays and Lists -->
+            <section class="week-section" id="week1-day5">
+                <h3>Day 5-7: Arrays and Lists</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="day5-1" class="task">
+                        <label for="day5-1">Introduction to Arrays</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day5-2" class="task">
+                        <label for="day5-2">Dynamic Arrays</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day5-3" class="task">
+                        <label for="day5-3">Array Operations: Insert, Delete, Search</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day5-4" class="task">
+                        <label for="day5-4">Two Pointers Technique</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day5-5" class="task">
+                        <label for="day5-5">Sliding Window Technique</label>
+                    </li>
                 </ul>
-            </li>
-        </ul>
+            </section>
+        </div>
         <textarea id="week1-note" class="note hidden" placeholder="Notes for Week 1..."></textarea>
-        
+
         <!-- Week 2 -->
         <h2 class="hidden" id="week2-header">Week 2: Advanced Array Techniques and Strings</h2>
-        <ul class="week week2 hidden">
-            <li>
-                <input type="checkbox" id="day8" class="task">
-                <label for="day8">Day 8-9: Advanced Array Techniques</label>
-                <ul>
-                    <li><input type="checkbox" id="day8-1" class="task"><label for="day8-1">Prefix Sums</label></li>
-                    <li><input type="checkbox" id="day8-2" class="task"><label for="day8-2">Difference Arrays</label></li>
-                    <li><input type="checkbox" id="day8-3" class="task"><label for="day8-3">Kadane’s Algorithm</label></li>
+        <div class="week-content week2 hidden">
+            <section class="week-section" id="week2-day8">
+                <h3>Day 8-9: Advanced Array Techniques</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="day8-1" class="task">
+                        <label for="day8-1">Prefix Sums</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day8-2" class="task">
+                        <label for="day8-2">Difference Arrays</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day8-3" class="task">
+                        <label for="day8-3">Kadane’s Algorithm</label>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <input type="checkbox" id="day10" class="task">
-                <label for="day10">Day 10-12: Strings</label>
-                <ul>
-                    <li><input type="checkbox" id="day10-1" class="task"><label for="day10-1">Basic String Operations</label></li>
-                    <li><input type="checkbox" id="day10-2" class="task"><label for="day10-2">String Matching Algorithms (Knuth-Morris-Pratt, Rabin-Karp)</label></li>
-                    <li><input type="checkbox" id="day10-3" class="task"><label for="day10-3">String Manipulation Problems</label></li>
+            </section>
+
+            <section class="week-section" id="week2-day10">
+                <h3>Day 10-12: Strings</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="day10-1" class="task">
+                        <label for="day10-1">Basic String Operations</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day10-2" class="task">
+                        <label for="day10-2">String Matching Algorithms (Knuth-Morris-Pratt, Rabin-Karp)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day10-3" class="task">
+                        <label for="day10-3">String Manipulation Problems</label>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <input type="checkbox" id="day13" class="task">
-                <label for="day13">Day 13-14: Sorting Algorithms</label>
-                <ul>
-                    <li><input type="checkbox" id="day13-1" class="task"><label for="day13-1">Bubble Sort, Selection Sort, Insertion Sort</label></li>
-                    <li><input type="checkbox" id="day13-2" class="task"><label for="day13-2">Merge Sort, Quick Sort</label></li>
-                    <li><input type="checkbox" id="day13-3" class="task"><label for="day13-3">Counting Sort, Radix Sort</label></li>
+            </section>
+
+            <section class="week-section" id="week2-day13">
+                <h3>Day 13-14: Sorting Algorithms</h3>
+                <ul class="task-list">
+                    <li>
+                        <input type="checkbox" id="day13-1" class="task">
+                        <label for="day13-1">Bubble Sort, Selection Sort, Insertion Sort</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day13-2" class="task">
+                        <label for="day13-2">Merge Sort, Quick Sort</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="day13-3" class="task">
+                        <label for="day13-3">Counting Sort, Radix Sort</label>
+                    </li>
                 </ul>
-            </li>
-        </ul>
+            </section>
+        </div>
         <textarea id="week2-note" class="note hidden" placeholder="Notes for Week 2..."></textarea>
-        
-        <!-- Week 3 -->
+       <!-- Week 3 -->
         <h2 class="hidden" id="week3-header">Week 3: Linked Lists</h2>
         <ul class="week week3 hidden">
             <li>
@@ -112,7 +181,7 @@
             </li>
         </ul>
         <textarea id="week3-note" class="note hidden" placeholder="Notes for Week 3..."></textarea>
-        
+
         <!-- Week 4 -->
         <h2 class="hidden" id="week4-header">Week 4: Stacks and Queues</h2>
         <ul class="week week4 hidden">
@@ -147,7 +216,8 @@
             </li>
         </ul>
         <textarea id="week4-note" class="note hidden" placeholder="Notes for Week 4..."></textarea>
-        
+
+
         <!-- Week 5 -->
         <h2 class="hidden" id="week5-header">Week 5: Trees</h2>
         <ul class="week week5 hidden">
@@ -180,7 +250,7 @@
             </li>
         </ul>
         <textarea id="week5-note" class="note hidden" placeholder="Notes for Week 5..."></textarea>
-        
+
         <!-- Week 6 -->
         <h2 class="hidden" id="week6-header">Week 6: Heaps and Hashing</h2>
         <ul class="week week6 hidden">
@@ -215,7 +285,7 @@
             </li>
         </ul>
         <textarea id="week6-note" class="note hidden" placeholder="Notes for Week 6..."></textarea>
-        
+
         <!-- Week 7 -->
         <h2 class="hidden" id="week7-header">Week 7: Graphs</h2>
         <ul class="week week7 hidden">
@@ -247,7 +317,7 @@
             </li>
         </ul>
         <textarea id="week7-note" class="note hidden" placeholder="Notes for Week 7..."></textarea>
-        
+
         <!-- Week 8 -->
         <h2 class="hidden" id="week8-header">Week 8: Dynamic Programming</h2>
         <ul class="week week8 hidden">
@@ -274,13 +344,13 @@
                 <label for="day60">Day 60-61: Advanced DP Problems</label>
                 <ul>
                     <li><input type="checkbox" id="day60-1" class="task"><label for="day60-1">Edit Distance</label></li>
-                    <li><input type="checkbox" id="day60-2" class="task"><label for="day60-2">Maximum Subarray Sum (Kadane’s Algorithm)</label></li>
+                    <li><input type="checkbox" id="day60-2" class="task"><label for="day60-2">Maximum Subarray Sum (Kadanes Algorithm)</label></li>
                     <li><input type="checkbox" id="day60-3" class="task"><label for="day60-3">Partition Equal Subset Sum</label></li>
                 </ul>
             </li>
         </ul>
         <textarea id="week8-note" class="note hidden" placeholder="Notes for Week 8..."></textarea>
-        
+
         <!-- Week 9 -->
         <h2 class="hidden" id="week9-header">Week 9: Advanced Topics</h2>
         <ul class="week week9 hidden">
@@ -313,18 +383,127 @@
             </li>
         </ul>
         <textarea id="week9-note" class="note hidden" placeholder="Notes for Week 9..."></textarea>
-    </div>
 
-    <script>
+        <script>
+        function saveState() {
+            const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+            const notes = Array.from(document.querySelectorAll('textarea.note'));
+
+            // Save checkbox states
+            const checkboxStates = checkboxes.map(cb => cb.checked);
+            localStorage.setItem('checkboxStates', JSON.stringify(checkboxStates));
+
+            // Save notes values
+            const noteValues = notes.map(note => note.value);
+            localStorage.setItem('noteValues', JSON.stringify(noteValues));
+        }
+
+        // Load state from local storage
+        function loadState() {
+            const checkboxStates = JSON.parse(localStorage.getItem('checkboxStates'));
+            const noteValues = JSON.parse(localStorage.getItem('noteValues'));
+
+            if (checkboxStates) {
+                document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+                    checkbox.checked = checkboxStates[index] || false;
+                    // Update visual state
+                    if (checkbox.checked) {
+                        checkbox.parentElement.style.textDecoration = 'line-through';
+                    } else {
+                        checkbox.parentElement.style.textDecoration = 'none';
+                    }
+                });
+            }
+
+            if (noteValues) {
+                document.querySelectorAll('textarea.note').forEach((textarea, index) => {
+                    textarea.value = noteValues[index] || '';
+                });
+            }
+        }
+
+        // Check the completion of weeks
+        function checkWeekCompletion() {
+            const weeks = [
+                { header: 'week2-header', list: 'week2', note: 'week2-note' },
+                { header: 'week3-header', list: 'week3', note: 'week3-note' },
+                { header: 'week4-header', list: 'week4', note: 'week4-note' },
+                { header: 'week5-header', list: 'week5', note: 'week5-note' },
+                { header: 'week6-header', list: 'week6', note: 'week6-note' },
+                { header: 'week7-header', list: 'week7', note: 'week7-note' },
+                { header: 'week8-header', list: 'week8', note: 'week8-note' },
+                { header: 'week9-header', list: 'week9', note: 'week9-note' }
+            ];
+
+            weeks.forEach((week, index) => {
+                const previousWeekTasks = document.querySelectorAll(`.week${index + 1} .task`);
+                const isPreviousWeekComplete = Array.from(previousWeekTasks).every(task => task.checked);
+
+                if (isPreviousWeekComplete) {
+                    document.getElementById(week.header).classList.remove('hidden');
+                    document.querySelector(`.${week.list}`).classList.remove('hidden');
+                    document.getElementById(week.note).classList.remove('hidden');
+                }
+            });
+        }
+
+        // Handle checkbox change events
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // Update visual state
+                if (this.checked) {
+                    this.parentElement.style.textDecoration = 'line-through';
+                } else {
+                    this.parentElement.style.textDecoration = 'none';
+                }
+                // Save the state to local storage
+                saveState();
+                // Check week completion
+                checkWeekCompletion();
+            });
+        });
+
+        // Handle note input events
+        document.querySelectorAll('textarea.note').forEach(textarea => {
+            textarea.addEventListener('input', function() {
+                // Save the state to local storage
+                saveState();
+            });
+        });
+
+        // Reset button functionality
         document.getElementById('reset-button').addEventListener('click', function() {
-            // Code to reset progress and restart from week one
-            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+                checkbox.parentElement.style.textDecoration = 'none';
+            });
             document.querySelectorAll('textarea.note').forEach(textarea => textarea.value = '');
             document.querySelectorAll('.week').forEach(week => week.classList.add('hidden'));
             document.querySelectorAll('h2').forEach(header => header.classList.add('hidden'));
             document.getElementById('week1-header').classList.remove('hidden');
             document.querySelector('.week1').classList.remove('hidden');
+
+            // Clear local storage
+            localStorage.removeItem('checkboxStates');
+            localStorage.removeItem('noteValues');
         });
+
+        // Load the saved state when the page loads
+        window.addEventListener('load', function() {
+            loadState();
+            checkWeekCompletion();
+        });
+
+        // Save the state when the user leaves the page
+        window.addEventListener('beforeunload', saveState);
     </script>
+        <h2>Overall Progress</h2>
+        <div class="progress-bar">
+            <div id="overall-progress" class="progress"></div>
+        </div>
+        <p id="overall-progress-text">Overall Progress: 0%</p>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
