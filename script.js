@@ -1,87 +1,53 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const tasks = document.querySelectorAll('.task');
-    const notes = document.querySelectorAll('.note');
-    const resetButton = document.getElementById('reset-button');
-    const weeks = [
-        { header: 'week2-header', list: 'week2', note: 'week2-note' },
-        { header: 'week3-header', list: 'week3', note: 'week3-note' },
-        // Add more weeks as needed
-        { header: 'week13-header', list: 'week13', note: 'week13-note' }
-    ];
+<script>
+    // Save state to local storage
+    function saveState() {
+        const checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+        const notes = Array.from(document.querySelectorAll('textarea.note'));
 
-    // Load saved state from localStorage
-    tasks.forEach(task => {
-        const savedState = localStorage.getItem(task.id);
-        if (savedState === 'true') {
-            task.checked = true;
-            task.parentElement.style.textDecoration = 'line-through';
+        // Save checkbox states
+        const checkboxStates = checkboxes.map(cb => cb.checked);
+        localStorage.setItem('checkboxStates', JSON.stringify(checkboxStates));
+
+        // Save notes values
+        const noteValues = notes.map(note => note.value);
+        localStorage.setItem('noteValues', JSON.stringify(noteValues));
+    }
+
+    // Load state from local storage
+    function loadState() {
+        const checkboxStates = JSON.parse(localStorage.getItem('checkboxStates'));
+        const noteValues = JSON.parse(localStorage.getItem('noteValues'));
+
+        if (checkboxStates) {
+            document.querySelectorAll('input[type="checkbox"]').forEach((checkbox, index) => {
+                checkbox.checked = checkboxStates[index] || false;
+            });
         }
 
-        task.addEventListener('change', () => {
-            localStorage.setItem(task.id, task.checked);
-            if (task.checked) {
-                task.parentElement.style.textDecoration = 'line-through';
-            } else {
-                task.parentElement.style.textDecoration = 'none';
-            }
-            checkWeekCompletion();
-        });
-    });
-
-    // Load saved notes from localStorage
-    notes.forEach(note => {
-        note.value = localStorage.getItem(note.id) || '';
-        note.addEventListener('input', () => {
-            localStorage.setItem(note.id, note.value);
-        });
-    });
-
-    function checkWeekCompletion() {
-        weeks.forEach((week, index) => {
-            const previousWeekTasks = document.querySelectorAll(`.week${index + 1} .task`);
-            const isPreviousWeekComplete = Array.from(previousWeekTasks).every(task => task.checked);
-
-            if (isPreviousWeekComplete) {
-                document.getElementById(week.header).classList.remove('hidden');
-                document.querySelector(`.${week.list}`).classList.remove('hidden');
-                document.getElementById(week.note).classList.remove('hidden');
-            }
-        });
+        if (noteValues) {
+            document.querySelectorAll('textarea.note').forEach((textarea, index) => {
+                textarea.value = noteValues[index] || '';
+            });
+        }
     }
 
-    function resetProgress() {
-        // Clear localStorage
-        localStorage.clear();
-        
-        // Reset task and note states
-        tasks.forEach(task => {
-            task.checked = false;
-            task.parentElement.style.textDecoration = 'none';
-        });
+    // Reset progress and restart from week one
+    document.getElementById('reset-button').addEventListener('click', function() {
+        // Code to reset progress and restart from week one
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+        document.querySelectorAll('textarea.note').forEach(textarea => textarea.value = '');
+        document.querySelectorAll('.week').forEach(week => week.classList.add('hidden'));
+        document.querySelectorAll('h2').forEach(header => header.classList.add('hidden'));
+        document.getElementById('week1-header').classList.remove('hidden');
+        document.querySelector('.week1').classList.remove('hidden');
 
-        notes.forEach(note => {
-            note.value = '';
-        });
+        // Save the reset state
+        saveState();
+    });
 
-        // Hide week elements
-        weeks.forEach(week => {
-            document.getElementById(week.header).classList.add('hidden');
-            document.querySelector(`.${week.list}`).classList.add('hidden');
-            document.getElementById(week.note).classList.add('hidden');
-        });
+    // Load the saved state when the page loads
+    window.addEventListener('load', loadState);
 
-        // Reset to initial state (show week 1 elements if applicable)
-        const initialWeekHeader = document.getElementById('week1-header');
-        const initialWeekList = document.querySelector('.week1');
-        const initialWeekNote = document.getElementById('week1-note');
-        if (initialWeekHeader) initialWeekHeader.classList.remove('hidden');
-        if (initialWeekList) initialWeekList.classList.remove('hidden');
-        if (initialWeekNote) initialWeekNote.classList.remove('hidden');
-    }
-
-    // Attach reset button click event
-    resetButton.addEventListener('click', resetProgress);
-
-    // Initial check to handle visibility of week elements
-    checkWeekCompletion();
-});
+    // Save state when user leaves the page
+    window.addEventListener('beforeunload', saveState);
+</script>
