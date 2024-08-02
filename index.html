@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSA Roadmap Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="countdown" class="countdown"></div>
+
+
     <h1>DSA Roadmap Tracker</h1>
     <button id="reset-button">Reset Progress</button>
     <div class="roadmap">
-        <!-- Week 1 -->
-        <h2>Week 1: Introduction and Basic Data Structures</h2>
+        <h2 id="week1-header">Week 1: Introduction and Basic Data Structures</h2>
         <div class="progress-bar">
             <div id="week1-progress" class="progress"></div>
         </div>
         <p id="week1-progress-text">Week 1 Progress: 0%</p>
         <div class="week-content week1">
+            <!-- Day 1-2: Python Basics Refresher -->
             <section class="week-section" id="week1-day1">
-                <h3>Day 1-2: Basics Refresher</h3>
+                <h3>Day 1-2: Python Basics Refresher</h3>
                 <ul class="task-list">
                     <li>
                         <input type="checkbox" id="day1-1" class="task">
@@ -43,7 +47,7 @@
                 </ul>
             </section>
 
-            <!-- Complexity Analysis -->
+            <!-- Day 3-4: Complexity Analysis -->
             <section class="week-section" id="week1-day3">
                 <h3>Day 3-4: Complexity Analysis</h3>
                 <ul class="task-list">
@@ -62,7 +66,7 @@
                 </ul>
             </section>
 
-            <!-- Arrays and Lists -->
+            <!-- Day 5-7: Arrays and Lists -->
             <section class="week-section" id="week1-day5">
                 <h3>Day 5-7: Arrays and Lists</h3>
                 <ul class="task-list">
@@ -90,6 +94,7 @@
             </section>
         </div>
         <textarea id="week1-note" class="note hidden" placeholder="Notes for Week 1..."></textarea>
+
 
         <!-- Week 2 -->
         <h2 class="hidden" id="week2-header">Week 2: Advanced Array Techniques and Strings</h2>
@@ -497,8 +502,7 @@
         // Save the state when the user leaves the page
         window.addEventListener('beforeunload', saveState);
     </script>
-    <div class="content">
-        <h2>Overall Progress</h2>
+    <h2>Overall Progress</h2>
         <div class="progress-bar">
             <div id="overall-progress" class="progress"></div>
         </div>
@@ -512,9 +516,10 @@
     <div id="timetableModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <img src="time_table.jpg" alt="Timetable" class="timetable">
+            <img src="C:/Users/yaswa/OneDrive/Desktop/time_table.jpg" alt="Timetable" class="timetable">
         </div>
     </div>
+    
 
     <script src="script.js"></script>
 </body>
