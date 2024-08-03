@@ -20,18 +20,6 @@ h1 {
     margin: 0;
 }
 
-button {
-    background-color: #ff5722;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    width: auto;
-}
 
 button:hover {
     background-color: #e64a19;
@@ -63,38 +51,80 @@ li {
     margin: 10px 0;
     font-size: 18px;
 }
+/* Enhanced Checkbox Styles */
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid #4CAF50;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #4CAF50;
+}
 
 input[type="checkbox"]:focus {
-    outline: 2px solid #4CAF50;
-    outline-offset: 2px;
+    border-color: #388E3C; /* Darker green for focus */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5);
 }
-
-.week-content {
-    margin: 20px 0;
-    padding: 10px;
-}
-
 
 input[type="checkbox"]:hover {
-    opacity: 0.8;
+    background-color: #f0f0f0; /* Light gray background on hover */
 }
 
+/* Enhanced Week Content */
+.week-content {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.week-content:hover {
+    background: linear-gradient(135deg, #f9f9f9, #ffffff);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced Hidden Class */
 .hidden {
     display: none;
 }
 
+/* Enhanced Note Styles */
 .note {
     width: 100%;
     margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 16px;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.note:hover {
+    background-color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .note::placeholder {
-    color: #aaa;
+    color: #888;
     font-style: italic;
 }
 
@@ -111,20 +141,32 @@ input[type="checkbox"]:hover {
         font-size: 18px;
     }
 }
+/* Enhanced Week Content */
 .week-content {
     margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
 }
 
+/* Enhanced Week Section */
 .week-section {
     margin-bottom: 20px;
 }
 
+/* Enhanced Week Section Heading */
 .week-section h3 {
     color: #4CAF50;
-    border-bottom: 1px solid #4CAF50;
-    padding-bottom: 5px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
+/* Enhanced Task List */
 .task-list {
     list-style-type: none;
     padding-left: 0;
@@ -134,33 +176,46 @@ input[type="checkbox"]:hover {
     margin: 10px 0;
     display: flex;
     align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-.task-list input[type="checkbox"] {
-    margin-right: 10px;
+.task-list li:hover {
+    background: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Enhanced Checkbox in Task List */
+.task-list input[type="checkbox"] {
+    margin-right: 15px;
+    accent-color: #4CAF50; /* Modern color for checkboxes */
+}
+
+/* Enhanced Progress Bar */
 .progress-bar {
     width: 100%;
     background-color: #e0e0e0;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
     margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Enhanced Progress Indicator */
 .progress {
     height: 20px;
     width: 0%;
-    background-color: #4caf50;
-    transition: width 0.5s;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
 }
 
+/* Hidden Class */
 .hidden {
     display: none;
-}
-
-.progress-bar,
-.progress {
-    box-sizing: border-box;
 }
 
 /* Button Styles */
@@ -233,13 +288,208 @@ input[type="checkbox"]:hover {
     margin: 0 auto;
     object-fit: contain;
 }
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
 #countdown {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    background-color: white;
-    padding: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
+    font-size: 2em;
+    color: #333;
+    text-align: left;
+    margin-top: 0%;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+button:active {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#openTimetableBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#openTimetableBtn:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+#openTimetableBtn:active {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+/* Button Styling */
+#openTimetableBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#openTimetableBtn:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+#openTimetableBtn:active {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the Countdown */
+#countdown {
+    font-family: 'Arial', sans-serif;
+    background-color: #fdfdfd; /* White background for contrast */
+    color: #0e0e0e; /* Dark text color for readability */
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 100% auto; /* Full width */
+    max-width: 800px auto; /* Adjust maximum width as needed */
+    margin: 20px auto; /* Center the countdown */
+    box-shadow: 0 6px 12px rgba(235, 12, 12, 0.15); /* Add a shadow for a subtle 3D effect */
+}
+
+/* Styling for each unit of time */
+#countdown .time-unit {
+    display: inline-block;
+    margin: 0 10px; /* Space between units */
+    padding: 15px;
+    background: #f0f0f0; /* Light gray background for individual units */
+    border: 2px solid #e0e0e0; /* Border to separate units */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-size: 48px;
+    font-weight: bold;
+    color: #000; /* Black for the values to stand out */
+}
+
+/* Styling for the separator (colon) */
+#countdown .separator {
+    display: inline-block;
+    font-size: 48px;
+    color: #777; /* Color for the separators */
+    margin: 0 10px;
 }
