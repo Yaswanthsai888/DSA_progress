@@ -218,22 +218,61 @@ input[type="checkbox"]:hover {
     display: none;
 }
 
-/* Button Styles */
-.timetable-button {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000; /* Ensures the button is on top of other elements */
+/* Styling for the Open Timetable button */
+#open-timetable-button {
+    position: fixed; /* Fixed position */
+    left: 20px; /* Distance from the left edge */
+    top: 20px; /* Distance from the top edge */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for button size */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensure it stays on top */
 }
-
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#openTimeTable:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 .timetable-button:hover {
     background-color: #45a049;
+}
+
+/* Styling for the modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 999; /* Ensure it's above other content */
+}
+
+/* Styling for modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto; /* Centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Max width for larger screens */
+}
+
+/* Styling for close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 /* Modal Styles */
@@ -492,4 +531,66 @@ button:active {
     font-size: 48px;
     color: #777; /* Color for the separators */
     margin: 0 10px;
+}
+/* Style for the fixed button */
+#open-timetable-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 700px; /* Max width of modal */
+    position: relative;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Timetable image */
+.timetable {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
 }
