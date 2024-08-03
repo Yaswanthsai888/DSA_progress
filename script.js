@@ -1,11 +1,12 @@
-
 const totalSeconds = 178 * 24 * 60 * 60; // Convert days to seconds
 const countdownElement = document.getElementById('countdown');
 const resetButton = document.getElementById('resetButton');
 
 function updateCountdown() {
-    let totalSecondsRemaining = localStorage.getItem('totalSecondsRemaining') || totalSeconds;
-    totalSecondsRemaining = parseInt(totalSecondsRemaining, 10);
+    const startDate = new Date(localStorage.getItem('startDate') || new Date().toISOString());
+    const now = new Date();
+    const elapsedSeconds = Math.floor((now - new Date(startDate)) / 1000);
+    let totalSecondsRemaining = totalSeconds - elapsedSeconds;
 
     // Calculate days, hours, minutes, and seconds
     const days = Math.floor(totalSecondsRemaining / (24 * 60 * 60));
@@ -19,19 +20,20 @@ function updateCountdown() {
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-    // Update localStorage and call updateCountdown again if time remains
+    // Check if countdown is finished
     if (totalSecondsRemaining > 0) {
-        localStorage.setItem('totalSecondsRemaining', totalSecondsRemaining - 1);
+        // Save start date to localStorage
+        localStorage.setItem('startDate', startDate.toISOString());
         setTimeout(updateCountdown, 1000); // Update every second
     } else {
         // Clear localStorage when countdown finishes
-        localStorage.removeItem('totalSecondsRemaining');
+        localStorage.removeItem('startDate');
     }
 }
 
 // Reset button functionality
 resetButton.addEventListener('click', () => {
-    localStorage.setItem('totalSecondsRemaining', totalSeconds);
+    localStorage.setItem('startDate', new Date().toISOString());
     updateCountdown();
 });
 
